@@ -1,5 +1,6 @@
 package com.example.androidnativeexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,13 +16,17 @@ class MainActivity : AppCompatActivity() {
         val f = 21.1f
         numberToCpp.text = floatToInt(f).toString()
         numberFromCpp.text = numberFromCPP().toString()
+
+        nextTaskButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, OpenGLES20Activity::class.java);
+            startActivity(intent);
+        }
     }
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    external fun stringFromJNI(): String
     external fun floatToInt(x: Float): Int
     external fun numberFromCPP(): Int
 
