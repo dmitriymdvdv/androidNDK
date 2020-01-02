@@ -12,14 +12,12 @@ cmake_minimum_required(VERSION 3.4.1)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 add_library( # Sets the name of the library.
-        CubeG2
+        native-lib
         # Sets the library as a shared library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        CubeG2.cpp
-        Cube.cpp
-        matrix.cpp
+        native-lib.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a
@@ -40,9 +38,5 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries(
-        CubeG2
-        android
-        log
-        EGL
-        GLESv2
+        native-lib
 )
