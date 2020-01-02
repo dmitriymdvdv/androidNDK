@@ -1,2 +1,3 @@
 include ':app', ':mycpplib'
 rootProject.name='AndroidNativeExample'
+include ':openCVLibrary343'

@@ -3,6 +3,7 @@ package com.example.androidnativeexample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidnativeexample.openCV.OpenCVMainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import com.example.mycpplib.MyCppLib;
 
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         numberFromCpp.text = myCppLib.numberFromCPP().toString()
 
         nextTaskButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, OpenGLES20Activity::class.java);
+            val intent = Intent(this@MainActivity, OpenCVMainActivity::class.java);
             startActivity(intent);
         }
     }
